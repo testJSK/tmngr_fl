@@ -7,13 +7,12 @@ import mygroup.tmngr.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
     @Autowired
     private ProductService productService;
-    @CrossOrigin("*")
+//    @CrossOrigin(origins = "**/api/*")
     @GetMapping("/all")
     public ResponseEntity getProducts() {
         try {
