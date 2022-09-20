@@ -22,11 +22,15 @@ public class TmngrApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/**")
+				registry.addMapping(
+						"/api/**"
+//								"/reactcourseapi/**"
+								)
 						.allowedOrigins("*"
 								,"http://localhost:3000"
 								,"http://10.0.2.15:8080"
 								,"http://127.0.0.1:8080"
+								,"http://faceprog.ru"
 						)
 						.allowedHeaders("*")
 				;

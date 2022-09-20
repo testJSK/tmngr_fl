@@ -1,4 +1,4 @@
-export default productsApi => ({
+export default  productsApi => ({
     namespaced: true,
     state: {
         items: null
@@ -14,11 +14,8 @@ export default productsApi => ({
     actions: {
         async load({ commit }){
             console.log('action')
-
             const  products = await productsApi.all();
-
             commit('set', products);
-
         }
     },
 })

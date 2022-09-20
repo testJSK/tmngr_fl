@@ -3,8 +3,13 @@ export default http => ({
         let response = await http.get(`cart/load.php?token=${token}`);
         return response.data;
     },
-    // async add(token, id){
-    //
-    // }
+    async add(token, id){
+        let response = await http.get(`cart/add.php?id=${id}&token=${token}`);
+        return response.data;
+    },
+    async remove(token, id){
+        let response = await http.get(`cart/remove.php?id=${id}&token=${token}`);
+        return response.data;
+    }
 
 })

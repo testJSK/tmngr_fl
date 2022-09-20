@@ -7,6 +7,7 @@
           <div class="card-body" >
             <h3>{{ pr.productname }}</h3>
             <div>{{ pr.productcost }}</div>
+            {{ inCart }}
             <router-link to="">Read more</router-link>
             <hr>
             <button class="btn btn-success">Remove</button>
@@ -30,7 +31,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters( 'products', { products: 'items' })
+    ...mapGetters( 'products', { products: 'items' }),
+    ...mapGetters( 'cart', [ 'inCart'] )
   }
   // mounted() {
   //   fetch('/api/products/all')
