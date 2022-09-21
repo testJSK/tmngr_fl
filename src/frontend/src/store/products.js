@@ -1,7 +1,7 @@
 export default  productsApi => ({
     namespaced: true,
     state: {
-        items: null
+        items: []
     },
     getters: {
         items: state => state.items,
@@ -13,7 +13,7 @@ export default  productsApi => ({
     },
     actions: {
         async load({ commit }){
-            console.log('action')
+
             const  products = await productsApi.all();
             commit('set', products);
         }

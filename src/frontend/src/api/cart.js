@@ -4,11 +4,21 @@ export default http => ({
         return response.data;
     },
     async add(token, id){
-        let response = await http.get(`cart/add.php?id=${id}&token=${token}`);
+        let response = await http.get(`cart/add.php?id=${id}&token=${token}`, {
+            errorStub: {
+                text: 'Не удалось добавить товар.',
+                fallback: false
+            }
+        });
         return response.data;
     },
     async remove(token, id){
-        let response = await http.get(`cart/remove.php?id=${id}&token=${token}`);
+        let response = await http.get(`cart/remove.php?id=${id}&token=${token}`, {
+            errorStub: {
+                text: 'Не удалось удалить товар.',
+                fallback: false
+            }
+        });
         return response.data;
     }
 })

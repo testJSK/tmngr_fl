@@ -26,7 +26,6 @@ export default (cartApi, storageHelper) => ({
         async load({ commit } ){
             const oldToken = storageHelper.getCartToken();
             let { token, cart, needUpdate } = await cartApi.load(oldToken);
-            console.log(oldToken);
 
             if(needUpdate) {
                 storageHelper.setCartToken(token);
