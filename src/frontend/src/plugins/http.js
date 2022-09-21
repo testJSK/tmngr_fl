@@ -16,6 +16,3 @@ export default () => {
 
     return { http, api };
 }
-
-
-

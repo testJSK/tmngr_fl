@@ -2,16 +2,18 @@ export default (cartApi, storageHelper) => ({
     namespaced: true,
     state: {
         token: null,
-        products: [  ]
+        products: [  ],
+        cart: null,
         // products: [ { id: 100, cnt: 2}, { id: 100, cnt: 2}  ]
     },
     getters: {
         inCart: state => id => state.products.some(product => product.id === id)
+
     },
     mutations: {
-        load(state, { token, cart }){
+        load(state, { token, cart  }){
             state.token = token;
-            state.cart = cart;
+            state.products = cart;
         },
         add(state, id) {
             state.products.push( {id, cnt: 1} );
@@ -23,8 +25,9 @@ export default (cartApi, storageHelper) => ({
     actions: {
         async load({ commit } ){
             const oldToken = storageHelper.getCartToken();
-            console.log(oldToken);
             let { token, cart, needUpdate } = await cartApi.load(oldToken);
+            console.log(oldToken);
+
             if(needUpdate) {
                 storageHelper.setCartToken(token);
             }

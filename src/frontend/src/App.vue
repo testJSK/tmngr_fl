@@ -1,5 +1,6 @@
 <template>
   <div class="app-grid">
+    <app-alert></app-alert>
     <header>
       <div class="container py-3 mb-4 border-bottom">
         <div class="row">
@@ -38,10 +39,12 @@
 </template>
 
 <script>
+import AppAlert from "@/components/Alerts";
+
 export  default {
   name: 'App',
   components: {
-
+    AppAlert
   }
 }
 

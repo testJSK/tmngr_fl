@@ -11,5 +11,4 @@ export default http => ({
         let response = await http.get(`cart/remove.php?id=${id}&token=${token}`);
         return response.data;
     }
-
 })

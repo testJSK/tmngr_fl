@@ -9,7 +9,7 @@
             <div>{{ pr.price }}</div>
             <router-link to="">Read more</router-link>
             <hr>
-            <button v-if="inCart(pr.id)" @click="remove(pr.id)" class="btn btn-success">Remove</button>
+            <button v-if="inCart(pr.id)" @click="remove(pr.id)" class="btn btn-danger">Remove</button>
             <button v-else @click="add(pr.id)" class="btn btn-success" >Add</button>
           </div>
         </div>
