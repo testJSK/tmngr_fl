@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import App from '@/App.vue';
 import createHttp from '@/plugins/http';
-import createStore from '@/store/';
-import createRouter from '@/router/index';
+import createStore from '@/store';
+import createRouter from '@/router';
 import createStorageHelper from '@/utils/storage'
 import initHttpErrorsHandler from '@/connectors/http-errors-handler'
 import initHttpTokenHandler from '@/connectors/http-tokens-handler'

@@ -5,7 +5,6 @@ import createProductsApi from '@/api/products'
 
 export default () => {
     const http = axios.create({
-        baseURL: 'http://faceprog.ru/vue-advanced-api-l3/',
         // baseURL: 'http://localhost:8080/api/',
         timeout: 10000,
     });

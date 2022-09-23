@@ -21,8 +21,8 @@ export default {
   name: "loginView",
   data(){
     return {
-      login: 'some',
-      password: 'qwerty!q',
+      login: '',
+      password: '',
       errors: [],
     }
   },

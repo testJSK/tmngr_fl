@@ -9,14 +9,14 @@ export default store => {
     routes
   });
 
-  router.beforeEach((to, from, next) => {
-    let goto ;
-
-    if(to.meta.auth && !store.getters['user/isLogin']){
-      goto = { name: 'auth.login' };
-      next(goto);
-    }
-  });
+  // router.beforeEach((to, from, next) => {
+  //   let goto ;
+  //
+  //   if(to.meta.auth && !store.getters['user/isLogin']){
+  //     goto = { name: 'auth.login' };
+  //     next(goto);
+  //   }
+  // });
 
   return router;
 }
