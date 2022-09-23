@@ -5,7 +5,7 @@
       <div class="container py-3 mb-4 border-bottom">
         <div class="row">
           <div class="col col-sm-9">
-            <h1>Super shop</h1>
+            <h1>Super shop +</h1>
           </div>
           <div class="col col-sm-3">
             <div class="alert alert-default">

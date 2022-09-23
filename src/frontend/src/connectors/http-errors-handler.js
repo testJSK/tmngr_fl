@@ -7,8 +7,9 @@ export default (http, store) => {
                 let { errorStub } = error.config;
 
                 store.dispatch('alerts/add', {
-                    text: errorStub.text,
-                    closeable: true
+                    text: errorStub.text + ( errorStub.critical ? ' \n Необходимо перезагрузить страницу' : '' ),
+                    closeable: !errorStub.critical,
+
                 });
 
                 return { data: errorStub.fallback };

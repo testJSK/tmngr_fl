@@ -1,5 +1,6 @@
 import HomeView from '@/views/Home.vue'
 import ProductView from '@/views/Product.vue'
+import AuthLogin from '@/views/auth/Login.vue'
 
 
 export default function() {
@@ -8,6 +9,11 @@ export default function() {
             path: '/',
             name: 'home',
             component: HomeView
+        },
+        {
+            path: '/login',
+            name: 'auth.login',
+            component: AuthLogin
         },
         {
             path: '/product/:id',

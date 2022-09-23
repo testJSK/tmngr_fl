@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .alert-box{
+  top: 40px;
   position: fixed;
   padding: 10px;
   width: 300px;
