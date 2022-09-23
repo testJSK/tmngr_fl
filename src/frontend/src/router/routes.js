@@ -16,8 +16,6 @@ export default function() {
             path: '/login',
             name: 'auth.login',
             component: AuthLogin,
-            meta: { auth: false }
-
         },
         {
             path: '/office/dashboard',

@@ -2,7 +2,7 @@
   <div>
     <h1>Products</h1>
     <div class="row">
-      <div class="col col-sm-4 mb-3 mt-3" v-for="pr in items" :key="pr.id">
+      <div class="col col-sm-4 mb-3 mt-3" v-for="pr in products" :key="pr.id">
 <!--      <div class="col col-sm-4 mb-3 mt-3" v-for="pr in productsFiltered" :key="pr.id">-->
 
         <div class="card" >
