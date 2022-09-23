@@ -5,14 +5,20 @@
       <div class="container py-3 mb-4 border-bottom">
         <div class="row">
           <div class="col col-sm-9">
-            <h1>Super shop +</h1>
+            <h1>Super shop + </h1>
           </div>
           <div class="col col-sm-3">
             <div class="alert alert-default">
-              <div>In Cart: </div>
-              <div>Total: </div>
+              <div v-if="isLogin" >{{ user.name }}</div>
+              <router-link v-else :to="{ name: 'auth.login' }">LogIn</router-link>
             </div>
           </div>
+<!--          <div class="col col-sm-3">-->
+<!--            <div class="alert alert-default">-->
+<!--              <div>In Cart: </div>-->
+<!--              <div>Total: </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
     </header>
@@ -40,11 +46,20 @@
 
 <script>
 import AppAlert from "@/components/Alerts";
+import { mapGetters } from "vuex";
 
 export  default {
   name: 'App',
   components: {
     AppAlert
+  },
+  data(){
+    return{
+
+    }
+  },
+  computed: {
+    ...mapGetters('user', [ 'user', 'isLogin' ]),
   }
 }
 

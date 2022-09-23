@@ -5,6 +5,7 @@ import createStore from '@/store';
 import createRouter from '@/router';
 import createStorageHelper from '@/utils/storage'
 import initHttpErrorsHandler from '@/connectors/http-errors-handler'
+import initHttpTokenHandler from '@/connectors/http-tokens-handler'
 
 export default () => {
     const { http, api } = createHttp();
@@ -12,14 +13,18 @@ export default () => {
 
     const store = createStore(api, storageHelper);
     const router = createRouter(store);
-    initHttpErrorsHandler(http, store, router)
 
+    initHttpErrorsHandler(http, store, router);
+    initHttpTokenHandler(http, storageHelper);
+
+    store.dispatch('user/init');
     store.dispatch('cart/load');
     store.dispatch('products/load');
 
     const app = createApp(App).use(store).use(router)  // .mount('#app');
 
     app.config.globalProperties['$api'] = api;
+    app.config.globalProperties['$storage'] = storageHelper;
 
     return app;
 }

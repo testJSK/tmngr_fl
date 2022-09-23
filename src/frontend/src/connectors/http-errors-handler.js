@@ -8,14 +8,11 @@ export default (http, store) => {
 
                 store.dispatch('alerts/add', {
                     text: errorStub.text + ( errorStub.critical ? ' \n Необходимо перезагрузить страницу' : '' ),
-                    closeable: !errorStub.critical,
-
+                    closeable: !errorStub.critical
                 });
-
                 return { data: errorStub.fallback };
             }
-
-            Promise.reject(error);
+            return  Promise.reject(error);
         }
     )
 }

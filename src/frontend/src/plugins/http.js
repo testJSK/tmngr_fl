@@ -5,9 +5,7 @@ import createProductsApi from '@/api/products'
 
 export default () => {
     const http = axios.create({
-        baseURL: 'http://fac-l3/',
-        // baseURL: 'http://facrseapi/',
-        // baseURL: 'http://localhost:8080/api/',
+        baseURL: 'http:///api/',
         timeout: 10000,
     });
 
