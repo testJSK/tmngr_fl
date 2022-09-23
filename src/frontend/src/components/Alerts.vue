@@ -2,10 +2,7 @@
  <div class="alert-box" >
    <div v-for="alert in all" :key="alert.id" class="alert-item">
      {{ alert.text }}
-
    </div>
-
-
  </div>
 </template>
 

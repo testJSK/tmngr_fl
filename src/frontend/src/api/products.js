@@ -6,7 +6,6 @@ export default http => ({
                 fallback: []
             }
         });
-
         return response.data;
     }
 })

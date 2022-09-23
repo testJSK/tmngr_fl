@@ -19,22 +19,22 @@ export default {
       one: ''
     }
   },
-  mounted() {
-    fetch('/api/users/all')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        this.users = data;
-        console.log(this.users)
-      });
-    fetch('/api/users?id=1')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          this.one = data;
-          console.log(this.users)
-        });
-  }
+  // mounted() {
+  //   fetch('/api/users/all')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data)
+  //       this.users = data;
+  //       console.log(this.users)
+  //     });
+  //   fetch('/api/users?id=1')
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         console.log(data)
+  //         this.one = data;
+  //         console.log(this.users)
+  //       });
+  // }
 }
 </script>
 

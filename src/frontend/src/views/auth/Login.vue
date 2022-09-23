@@ -14,8 +14,6 @@
         <p  v-for="err in errors" :key="err">{{ err }}</p>
       </div>
     </form>
-
-
 </template>
 
 <script>
@@ -23,8 +21,8 @@ export default {
   name: "loginView",
   data(){
     return {
-      login: '',
-      password: '',
+      login: 'some',
+      password: 'qwerty!q',
       errors: [],
     }
   },
