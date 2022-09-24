@@ -4,7 +4,7 @@ export default http => ({
         return response.data;
     },
     async check(){
-        let response = await http.get('auth/check.php' );
+        let response = await http.get('auth/check.php?sleep' );
         return response.data;
     }
 })
