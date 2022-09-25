@@ -22,11 +22,11 @@
     <div>
       <div class="container">
         <div class="row">
-          <div class="col col-12 col-md-3">
-            <ul class="nav nav-pills flex-column mb-auto">
+<!--          <div class="col col-12 col-md-3">-->
+<!--            <ul class="nav nav-pills flex-column mb-auto">-->
 
-            </ul>
-          </div>
+<!--            </ul>-->
+<!--          </div>-->
           <main class="col col-12 col-md-9">
             <router-view />
           </main>

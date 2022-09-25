@@ -6,5 +6,9 @@ export default http => ({
     async check(){
         let response = await http.get('auth/check.php?sleep' );
         return response.data;
+    },
+    async logout(){
+        let response = await http.get('auth/logout.php');
+        return response.data
     }
 })

@@ -33,7 +33,7 @@ export default {
        try {
          let  accessToken = await this.$api.auth.login(this.login, this.password);
          this.$storage.setAccessToken(accessToken);
-         document.location = '/';
+         document.location = '/office/dashboard';
 
        } catch (e) {
          console.warn(e);

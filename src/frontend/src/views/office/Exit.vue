@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <h1>DashboardView</h1>
+  <div class="row">
+<h1>eXIT</h1>
   </div>
-
 </template>
 
 <script>
 
 export default {
-  name: "DashboardView"
+  name: "OfficeExit",
+  methods: {
+  }
+
 }
 </script>
 

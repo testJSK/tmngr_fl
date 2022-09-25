@@ -29,7 +29,14 @@ export default authApi => {
                 } finally {
                     userPromiseResolver()
                 }
-
+            },
+            async logout( { commit }){
+                let res = await authApi.logout();
+console.log(res)
+                if(res){
+                    commit('setUser', null);
+                }
+                return res;
             }
         }
     }

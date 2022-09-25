@@ -1,8 +1,11 @@
 import HomeView from '@/views/Home.vue'
 import ProductView from '@/views/Product.vue'
 import AuthLogin from '@/views/auth/Login.vue'
-import OrdersView from "@/views/office/Orders.vue";
-import DashboardView from "@/views/office/Dashboard.vue";
+
+import OfficeBase from '@/views/office/Base'
+import OfficeExit from '@/views/office/Exit'
+import OfficeOrders from "@/views/office/Orders.vue";
+import OfficeDashboard from "@/views/office/Dashboard.vue";
 
 
 export default function() {
@@ -16,18 +19,29 @@ export default function() {
             path: '/login',
             name: 'auth.login',
             component: AuthLogin,
+            meta: { guest: true }
         },
         {
-            path: '/office/dashboard',
-            name: 'office.dashboard',
-            component: DashboardView,
-            meta: { auth: true }
-        },
-        {
-            path: '/office/orders',
-            name: 'office.orders',
-            component: OrdersView,
-            meta: { auth: true }
+            path: '/office',
+            component: OfficeBase,
+            meta: { auth: true },
+            children: [
+                {
+                    path: 'dashboard',
+                    name: 'office.dashboard',
+                    component: OfficeDashboard
+                },
+                {
+                    path: 'orders',
+                    name: 'office.orders',
+                    component: OfficeOrders
+                },
+                {
+                    path: 'exit',
+                    name: 'office.exit',
+                    component: OfficeExit
+                }
+            ]
         },
         {
             path: '/product/:id',

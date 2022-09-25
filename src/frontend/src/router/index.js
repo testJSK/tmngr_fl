@@ -10,16 +10,18 @@ export default store => {
     routes
   });
 
-  router.beforeEach( async (to,
-                            from,
-                            next) => {
+  router.beforeEach( async ( to, from, next) => {
     let goto ;
 
-    if(to.meta.auth){
+    if(to.meta.auth || to.meta.guest){
       await store.getters['user/ready'];
+      let isLogin = store.getters['user/isLogin']
 
-      if(!store.getters['user/isLogin']){
+      if(to.meta.auth && !isLogin){
         goto = { name: 'auth.login' };
+      }
+      else if(to.meta.guest && isLogin) {
+        goto = { name: 'office.dashboard' };
       }
     }
 
