@@ -10,16 +10,20 @@ export default store => {
     routes
   });
 
-  router.beforeEach((to,
+  router.beforeEach( async (to,
                             from,
                             next) => {
     let goto ;
 
-    if(to.meta.auth && !store.getters['user/isLogin']){
-      goto = { name: 'auth.login' };
-    }
-    next(goto);
+    if(to.meta.auth){
+      await store.getters['user/ready'];
 
+      if(!store.getters['user/isLogin']){
+        goto = { name: 'auth.login' };
+      }
+    }
+
+    next(goto);
   });
 
   return router;
