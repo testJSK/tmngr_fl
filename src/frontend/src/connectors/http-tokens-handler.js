@@ -7,5 +7,21 @@ export default (http, storage) => {
         }
 
         return config;
-    })
+    });
+
+    http.interceptors.response.use(
+        r => r,
+        async error => {
+            if(error.response?.status !== 401) {
+                return Promise.reject(error);
+            }
+
+
+            // try to use refresh token
+            if(!error.config.allowed401){
+                storage.setAccessToken(null);
+                document.location = '/login'; // tmp without DI
+            }
+            return Promise.reject(error);
+        });
 }

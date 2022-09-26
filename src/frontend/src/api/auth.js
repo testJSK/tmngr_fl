@@ -4,11 +4,18 @@ export default http => ({
         return response.data;
     },
     async check(){
-        let response = await http.get('auth/check.php?sleep' );
+        let response = await http.get('auth/check.php?' , {
+            allowed401: true
+        });
         return response.data;
     },
     async logout(){
-        let response = await http.get('auth/logout.php');
-        return response.data
+        let response = await http.get('auth/logout.php' , {
+            errorStub: {
+                text: 'Не удалось выйти с сайта.',
+                fallback: false ,
+            }
+        });
+        return response.data;
     }
 })

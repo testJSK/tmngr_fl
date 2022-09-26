@@ -2,6 +2,7 @@ import axios from 'axios'
 import createAuthApi from '@/api/auth'
 import createCartApi from '@/api/cart'
 import createProductsApi from '@/api/products'
+import createOrdersApi from '@/api/orders'
 
 export default () => {
     const http = axios.create({
@@ -12,7 +13,8 @@ export default () => {
     const api = {
         auth: createAuthApi(http),
         cart: createCartApi(http),
-        products: createProductsApi(http)
+        products: createProductsApi(http),
+        orders: createOrdersApi(http)
     }
 
     return { http, api };

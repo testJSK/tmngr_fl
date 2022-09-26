@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col col-9 col-md-3">
+    <div class="col col-12 col-md-3">
       <ul class="list-group">
         <li class="list-group-item">
           <router-link :to="{ name: 'office.dashboard' }">Dashboard</router-link>
@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="col col-9 col-md-3">
+    <div class="col col-9 col-md-9">
       <router-view></router-view>
     </div>
   </div>

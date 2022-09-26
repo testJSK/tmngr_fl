@@ -25,7 +25,7 @@ export default authApi => {
                     let user = await authApi.check();
                     commit('setUser', user)
                 } catch (e){
-                    console.warn(e);
+                    // console.warn(e);
                 } finally {
                     userPromiseResolver()
                 }

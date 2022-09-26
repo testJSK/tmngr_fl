@@ -14,8 +14,8 @@ export default () => {
     const store = createStore(api, storageHelper);
     const router = createRouter(store);
 
-    initHttpErrorsHandler(http, store, router);
     initHttpTokenHandler(http, storageHelper);
+    initHttpErrorsHandler(http, store, router);
 
     store.dispatch('products/load');
     store.dispatch('cart/load');

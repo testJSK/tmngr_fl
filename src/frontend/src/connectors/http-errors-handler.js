@@ -14,8 +14,9 @@ export default (http, store) => {
             }
             return  Promise.reject(error);
         }
-    )
+    );
 }
+
 
 // if(error.status === 401) {
 //     router.push( { name: 'login' });

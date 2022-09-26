@@ -7,8 +7,8 @@
           <div class="col col-sm-9">
             <h1>Super shop + old </h1>
             <a href="/">Home</a><br>
-            <a href="/office/orders">Orders</a><br>
-            <a href="/office/dashboard">Dashboard</a>
+<!--            <a href="/office/orders">Orders</a><br>-->
+<!--            <a href="/office/dashboard">Dashboard</a>-->
           </div>
           <div class="col col-sm-3">
             <div class="alert alert-default">
@@ -27,7 +27,7 @@
 
 <!--            </ul>-->
 <!--          </div>-->
-          <main class="col col-12 col-md-9">
+          <main class="col col-12 col-md-12">
             <router-view />
           </main>
         </div>
