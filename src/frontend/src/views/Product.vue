@@ -8,13 +8,16 @@
 export default {
   name: 'ProductView',
   computed: {
-
+    id(){
+      return this.$route.params.id;
+    }
   },
   methods: {
 
   },
   async created(){
-    console.log(this.$api.products);
+    let rating = await this.$api.products.getRating(this.id);
+    console.log(rating);
   }
 }
 </script>

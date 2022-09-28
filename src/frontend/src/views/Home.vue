@@ -9,7 +9,10 @@
           <div class="card-body" >
             <h3>{{ pr.title }}</h3>
             <div>{{ pr.price }}</div>
-            <router-link to="">Read more</router-link>
+            <div class="border-top border-bottom my-2">
+              <router-link :to="{ name: 'product', params: { id: pr.id } }">Read more</router-link>
+
+            </div>
             <hr>
             <button v-if="inCart(pr.id)" @click="remove(pr.id)" class="btn btn-danger">Remove</button>
             <button v-else @click="add(pr.id)" class="btn btn-success" >Add</button>

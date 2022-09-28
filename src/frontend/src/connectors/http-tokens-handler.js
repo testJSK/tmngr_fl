@@ -15,7 +15,18 @@ export default (http, storage) => {
             if(error.response?.status !== 401) {
                 return Promise.reject(error);
             }
+            let response;
 
+            try {
+                response = (await http.get('/auth/refresh/refresh.php')).data;
+            } catch (e){
+                response = { res: false }
+            }
+
+            if(response.res){
+                storage.setAccessToken(response.accessToken);
+                return await http.request(error.config);
+            }
 
             // try to use refresh token
             if(!error.config.allowed401){

@@ -4,12 +4,15 @@ export default () => ({
         return localStorage.getItem('CART_TOKEN');
     },
     setCartToken(token){
-        return localStorage.setItem('CART_TOKEN', token);
+        localStorage.setItem('CART_TOKEN', token);
     },
     getAccessToken(){
-        return localStorage.getItem('ACCESS_TOKEN')
+        return localStorage.getItem('ACCESS_TOKEN');
     },
     setAccessToken(token){
-        return localStorage.setItem('ACCESS_TOKEN', token)
+        localStorage.setItem('ACCESS_TOKEN', token);
     },
+    removeAccessToken(){
+        localStorage.removeItem('ACCESS_TOKEN');
+    }
 });
